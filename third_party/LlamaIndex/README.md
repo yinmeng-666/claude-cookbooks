@@ -15,3 +15,25 @@ Here we provide cookbooks for building LLM applications using Anthropic and Llam
 [Discord](https://discord.gg/dGcwcsnxhU)
 [Twitter](https://twitter.com/llama_index)
 [Linkedin](https://www.linkedin.com/company/llamaindex/)
+
+---
+
+## 中文翻译
+
+# LlamaIndex &lt;&gt; Claude Cookbooks
+
+[LlamaIndex](https://github.com/run-llama/llama_index) 是一个面向基于 LLM 的应用的数据框架，特别适用于那些能从上下文增强中受益的场景。
+
+这里我们提供了使用 Anthropic 和 LlamaIndex 构建 LLM 应用的 cookbooks。
+
+1. `Basic_RAG_With_LlamaIndex.ipynb` - 帮助你使用 LlamaIndex 构建 RAG 管道的 Notebook。
+2. `Router_Query_Engine.ipynb` - 帮助你使用 `RouterQueryEngine` 将用户查询路由到不同索引的 Notebook。
+3. `SubQuestion_Query_Engine` - 帮助你使用 `SubQuestionQueryEngine` 来回答跨越多个文档的复杂用户查询的 Notebook。
+4. `ReAct_Agent.ipynb` - 帮助你使用 `ReActAgent` 调用 Tools 和 QueryEngine Tools 的 Notebook。
+5. `Multi_Document_Agents.ipynb` - 帮助你为大量文档构建高效 RAG 管道的 Notebook。
+6. `Multi_Modal.ipynb` - 帮助你使用 LlamaIndex 构建多模态应用的 Notebook。
+
+[文档](https://docs.llamaindex.ai/en/stable/)
+[Discord](https://discord.gg/dGcwcsnxhU)
+[Twitter](https://twitter.com/llama_index)
+[Linkedin](https://www.linkedin.com/company/llamaindex/)

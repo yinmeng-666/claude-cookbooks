@@ -53,3 +53,63 @@ By default, promptfoo will run python in your shell. Make sure python points to 
 If a python binary is not present, you will see a "python: command not found" error.
 
 To override the Python binary, set the PROMPTFOO_PYTHON environment variable. You may set it to a path (such as /path/to/python3.11) or just an executable in your PATH (such as python3.11).
+
+---
+
+## 中文翻译
+
+### 使用 Promptfoo 进行评估
+
+### 关于本评估套件的说明
+
+1) 请务必遵循以下说明，尤其是有关所需依赖包的前置条件。
+
+2) 运行完整的 eval 套件可能需要高于平时的 rate limits。你可以考虑只在 promptfoo 中运行部分测试。
+
+3) 并非所有测试开箱即过——我们有意将该评估设计得具有中等挑战性。
+
+### 前置条件
+
+要使用 Promptfoo，你需要在系统中安装 node.js 和 npm。更多信息请参考[本指南](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)。
+
+你可以使用 npm 安装 promptfoo，也可以直接通过 npx 运行它。本指南中我们将使用 npx。
+
+*注意：在本示例中，你无需运行 `npx promptfoo@latest init`，因为此目录中已经存在初始化好的 `promptfooconfig.yaml` 文件。*
+
+官方文档见[这里](https://www.promptfoo.dev/docs/getting-started)。
+
+### 开始使用
+
+开始之前，请设置你的 ANTHROPIC_API_KEY 环境变量，或设置你所选 provider 所需的其他 key。你可以执行 `export ANTHROPIC_API_KEY=YOUR_API_KEY`。
+
+然后，`cd` 进入 `evaluation` 目录，并运行 `npx promptfoo@latest eval -c promptfooconfig.yaml --output ../data/results.csv`
+
+之后，你可以运行 `npx promptfoo@latest view` 查看结果。
+
+### 工作原理
+
+`promptfooconfig.yaml` 文件是我们评估配置的核心。它定义了几个关键部分：
+
+Prompts:
+- Prompts 从 `prompts.py` 文件中导入。
+- 这些 prompts 旨在测试 LM performance 的不同方面。
+
+Providers:
+- 我们在这里配置所使用的 Claude model(s)。
+
+Tests:
+- 测试用例定义在这里。
+- 这些测试规定了评估所使用的输入和期望输出。
+- Promptfoo 提供了多种内置测试类型（见文档），你也可以自定义。
+
+Output:
+- 指定评估结果的格式和位置。
+- Promptfoo 也支持多种输出格式！
+
+### 覆盖 Python binary
+
+默认情况下，promptfoo 会运行你 shell 中的 python。请确保 python 指向合适的可执行文件。
+
+如果系统中不存在 python binary，你会看到 `"python: command not found"` 错误。
+
+若要覆盖 Python binary，请设置 `PROMPTFOO_PYTHON` 环境变量。你可以将其设为一个路径（例如 /path/to/python3.11），也可以直接设为 PATH 中的某个可执行文件（例如 python3.11）。
